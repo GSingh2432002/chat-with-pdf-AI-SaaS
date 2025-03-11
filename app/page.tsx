@@ -53,27 +53,29 @@ export default function Home() {
     <main className="flex-1 overflow-scroll p-2 lg:p-5 bg-gradient-to-t from-[#e7e5e5] to-[#0F3AAE] ">
       <div className="bg-white py-24 sm:py-32 rounded-md drop-shadow-xl">
         <div className="flex flex-col items-center justify-center mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl sm:text-center">
-            <h2 className="text-base font-semibold leading-7 text-[#0F3AAE]">
-              Your AI-Powered PDF Assistant
-            </h2>
+          <div className="flex items-center justify-center space-x-4">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-base font-semibold leading-7 text-[#0F3AAE]">
+                Your AI-Powered PDF Assistant
+              </h2>
 
-            <p className="mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-              Tranform Your PDFs into Interactive Conversation
-            </p>
+              <p className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 sm:text-6xl">
+                Transform Your PDFs into Interactive Conversations
+              </p>
 
-            <p className="mt-6 text-sm text-gray-600 leading-8">
-              Introducing{" "}
-              <span className="font-bold text-[#0F3AAE]">Chat with PDF.</span>
-              <br />
-              <br /> Upload your document, and our chatbot will answer
-              questions, summarize the content, and answer all your Qs. Ideal
-              for everyone,
-              <span className="text-[#0F3AAE]"> Chat with PDF</span>{" "} turns static
-              documents into{" "}
-              <span className="font-bold">dynamic conversations</span>, enhancing
-              productivity 10x fold effortlessly.
-            </p>
+              <p className="mt-6 text-sm text-gray-600 leading-8">
+                Introducing{" "}
+                <span className="font-bold text-[#0F3AAE]">Chat with PDF.</span>
+                <br />
+                <br /> Upload your document, and our chatbot will answer
+                questions, summarize the content, and answer all your Qs. Ideal
+                for everyone,
+                <span className="text-[#0F3AAE]"> Chat with PDF</span> turns
+                static documents into{" "}
+                <span className="font-bold">dynamic conversations</span>,
+                enhancing productivity 10x fold effortlessly.
+              </p>
+            </div>
           </div>
 
           <Button asChild className="mt-10">
@@ -81,15 +83,36 @@ export default function Home() {
           </Button>
         </div>
 
-        <div>
-          <div>
-            <Image 
+        <div className="relative overflow-hidden pt-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <Image
               alt="App screenshot"
               src="/Hero.jpg"
               width={2432}
               height={1442}
+              className="mb-[-0%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
             />
+            <div aria-hidden="true" className="relative">
+              <div className="absolute bottom-0 -inset-x-32 bg-gradient-to-t from-white/95 pt-[5%]" />
+            </div>
           </div>
+        </div>
+
+        <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
+          <dl className="mx-auto grid max-w-2xl text-left grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+            {features.map((feature) => (
+              <div className="relative pl-9">
+                <dt className="inline font-semibold text-gray-900">
+                  <feature.icon
+                    aria-hidden="true"
+                    className="absolute left-1 top-1 h-5 w-5 text-[#0F3AAE]" 
+                  />
+                </dt>
+
+                <dd>{feature.description}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </main>
