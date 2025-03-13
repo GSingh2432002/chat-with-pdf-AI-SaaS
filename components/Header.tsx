@@ -11,18 +11,18 @@ function Header() {
       </Link>
 
       <SignedIn>
-        <div className="flex items-center space-x-2">
-            <Button asChild variant="link" className="hidden md:flex">
+        <div className="flex items-center space-x-6">
+            <Button asChild variant="outline" className="hidden md:flex border-[#0F3AAE] bg-[#d8ebff] hover:bg-[#51a9ff] transition duration-300 hover:text-white">
                 <Link href="/dashboard/upgrade">Pricing</Link>
             </Button>
 
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="border-[#0F3AAE] bg-[#d8ebff] hover:bg-[#51a9ff] transition duration-300 hover:text-white">
                 <Link href={"/dashboard"}>My Documents</Link>
             </Button>
 
-            <Button asChild variant="outline" className="border-[#0F3AAE]">
+            <Button asChild variant="outline" className="border-[#0F3AAE] bg-[#d8ebff] hover:bg-[#51a9ff] transition duration-300">
                 <Link href="/dashboard/upload">
-                    <FilePlus2 className="text-[#0F3AAE]" />
+                    <FilePlus2 className="text-[#0F3AAE] hover:text-[#FFFFFF]]" />
                 </Link>
             </Button>
 
