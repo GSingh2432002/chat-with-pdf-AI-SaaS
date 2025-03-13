@@ -52,17 +52,15 @@ export default function Home() {
   return (
     <main className="flex-1 overflow-scroll p-2 lg:p-5 bg-gradient-to-t from-[#e7e5e5] to-[#0F3AAE] ">
       <div className="bg-white py-24 sm:py-32 rounded-md drop-shadow-xl">
-        <div className="flex flex-col items-center justify-center mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center mx-auto max-w-7xl px-6 lg:px-8 bg-gradient-to-t from-blue-500/20 to-white pt-12 pb-20 rounded-xl">
           <div className="flex items-center justify-center space-x-4">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-base font-semibold leading-7 text-[#0F3AAE]">
                 Your AI-Powered PDF Assistant
               </h2>
-
               <p className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 sm:text-6xl">
                 Transform Your PDFs into Interactive Conversations
               </p>
-
               <p className="mt-6 text-sm text-gray-600 leading-8">
                 Introducing{" "}
                 <span className="font-bold text-[#0F3AAE]">Chat with PDF.</span>
@@ -77,7 +75,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-
           <Button asChild className="mt-10">
             <Link href="/dashboard">Get Started</Link>
           </Button>
@@ -105,7 +102,7 @@ export default function Home() {
                 <dt className="inline font-semibold text-gray-900">
                   <feature.icon
                     aria-hidden="true"
-                    className="absolute left-1 top-1 h-5 w-5 text-[#0F3AAE]" 
+                    className="absolute left-1 top-1 h-5 w-5 text-[#0F3AAE]"
                   />
                 </dt>
 
