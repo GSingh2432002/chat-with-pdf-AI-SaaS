@@ -11,13 +11,14 @@ import {
 } from "lucide-react";
 import useUpload from "@/hooks/useUpload";
 import { useRouter } from "next/navigation";
+import { stat } from "fs";
 
 function FileUploader() {
   const { progress, status, fileId, handleUpload } = useUpload();
   const router = useRouter();
 
   useEffect(() => {
-    if(fileId) {
+    if (fileId) {
       router.push(`/dashboard/${fileId}`);
     }
   }, [fileId, router]);
@@ -38,8 +39,31 @@ function FileUploader() {
         "application/pdf": [".pdf"],
       },
     });
+  const uploadInProgress = progress != null && progress >= 0 && progress <= 100;
   return (
     <div className="flex flex-col items-center max-w-7xl mx-auto">
+      {/* Loading... */}
+      {uploadInProgress && (
+        <div>
+          <div
+            className={`radial-progress bg-[##89c8ff] text-white border-[#0F3AAE] border-4 ${
+              progress === 100 && "hidden"
+            }`}
+            role="progressbar"
+            style={{
+              // @ts-ignore
+              "--value": progress,
+              "--size": "4rem",
+              "--thickness": "1.3rem",
+            }}
+          >
+            {progress} %{/* Render Status Icon */}
+            {/* @ts-ignore */}
+            <p>{status}</p>
+          </div>
+        </div>
+      )}
+
       <div
         {...getRootProps()}
         className={`p-10 border-2 border-dashed mt-10 w-[90%] border-[#0F3AAE] text-[#0F3AAE] rounded-lg h-96 flex items-center justify-center ${
