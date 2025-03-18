@@ -2,7 +2,6 @@
 
 import { db, storage } from "@/firebase";
 import { useUser } from "@clerk/nextjs";
-import { create } from "domain";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useRouter } from "next/navigation";
