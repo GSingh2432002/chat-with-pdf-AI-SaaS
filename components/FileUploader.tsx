@@ -44,7 +44,7 @@ function FileUploader() {
     <div className="flex flex-col items-center max-w-7xl mx-auto">
       {/* Loading... */}
       {uploadInProgress && (
-        <div>
+        <div className="mt-32 flex flex-col items-center justify-center gap-5">
           <div
             className={`radial-progress bg-[##89c8ff] text-white border-[#0F3AAE] border-4 ${
               progress === 100 && "hidden"
